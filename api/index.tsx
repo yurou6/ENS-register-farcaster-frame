@@ -2,6 +2,7 @@ import { Button, Frog, TextInput } from 'frog'
 import { devtools } from 'frog/dev'
 import { serveStatic } from 'frog/serve-static'
 // import { neynar } from 'frog/hubs'
+import { pinata } from 'frog/hubs'
 import { handle } from 'frog/vercel'
 import { ethers } from 'ethers';
 
@@ -10,15 +11,15 @@ import { ethers } from 'ethers';
 //   runtime: 'edge',
 // }
 
-const network = 'mainnet'
-const contractAddress = "0x253553366Da8546fC250F225fe3d25d0C782303b"
-const chainId = 1
-const blockscountLink = "https://eth.blockscout.com/tx/"
+// const network = 'mainnet'
+// const contractAddress = "0x253553366Da8546fC250F225fe3d25d0C782303b"
+// const chainId = 1
+// const blockscountLink = "https://eth.blockscout.com/tx/"
 
-// const network = 'sepolia'
-// const contractAddress = "0xFED6a969AaA60E4961FCD3EBF1A2e8913ac65B72"
-// const chainId = 11155111
-// const blockscountLink = "https://eth-sepolia.blockscout.com/tx/"
+const network = 'sepolia'
+const contractAddress = "0xFED6a969AaA60E4961FCD3EBF1A2e8913ac65B72"
+const chainId = 11155111
+const blockscountLink = "https://eth-sepolia.blockscout.com/tx/"
 
 
 const slipagge = 10n;
@@ -55,6 +56,7 @@ export const app = new Frog({
   title: 'ENS Register',
   // Supply a Hub to enable frame verification.
   // hub: neynar({ apiKey: 'NEYNAR_FROG_FM' })
+  hub: pinata()
 })
 
 function generateRandomBytes32() {

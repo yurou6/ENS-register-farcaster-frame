@@ -59,3 +59,24 @@ Users receive confirmation of a successful registration and can view the transac
 ## Hosting
 
 The project is hosted on Vercel and can be accessed at the following URL: [https://hackathon5.vercel.app/](https://hackathon5.vercel.app/)
+
+## Connect with fatcaster
+### hub
+Use pinata:
+
+```
+import { pinata } from 'frog/hubs'
+
+hub: pinata()
+```
+### ngrok
+Forwarding:
+
+```
+ngrok config add-authtoken <your authtoken>
+ngrok http http://localhost:<port>
+```
+ngrok website: [https://ngrok.com/]
+
+
+
